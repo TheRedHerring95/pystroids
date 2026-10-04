@@ -43,6 +43,12 @@ def main():
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+            for shot in shots:
+                boom = asteroid.collides_with(shot)
+                if boom == True:
+                    log_event("asteroid_shot")
+                    asteroid.kill()
+                    shot.kill()
         dt = clock.tick(60) / 1000
 #        print(f"{dt}")
     print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
