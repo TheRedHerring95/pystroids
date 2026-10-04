@@ -47,7 +47,7 @@ def main():
                 boom = asteroid.collides_with(shot)
                 if boom == True:
                     log_event("asteroid_shot")
-                    asteroid.kill()
+                    asteroid.split()
                     shot.kill()
         dt = clock.tick(60) / 1000
 #        print(f"{dt}")
